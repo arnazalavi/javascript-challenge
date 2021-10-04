@@ -1,0 +1,32 @@
+.navbar-dark{
+    background-color: beige
+}
+
+.navbar-button{
+    background-color:#0cd1c7;
+    
+
+}
+
+h3 {
+    color: #0cd1c7;}
+h5 {
+        color: #0cd1c7;}
+
+.latitude {
+            color: white !important;
+            background-color: #0cd1c7;
+            padding: 5px 10px;
+            font-family: verdana;}
+
+.img-thumbnail img { 
+    width: 140px;
+}
+
+.left-img {
+    float:left;margin-right:15px
+}
+
+.bottom-img {
+width:100px;
+height:90px}
