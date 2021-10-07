@@ -35,10 +35,26 @@ function runEnter() {
     var inputShape = shapeElement.property("value");
  
    console.log(inputValue);
-   var filteredData = tableData.filter(data => data.datetime == inputValue || data.city == inputCity || data.state == inputState || data.country == inputCountry
-    || data.shape == inputShape)
+   var filteredData = tableData.filter(data => data.datetime == inputValue &&
+     data.city == inputCity && data.state == inputState && data.country == inputCountry &&
+     data.shape == inputShape)
      ;  
 
+     var filteredData = tableData.filter(data => { 
+       var found = false;
+      
+       found = data.datetime ==  inputValue || inputValue.length === 0
+       
+
+      if (inputCity.length > 0 && found === false ) { 
+        found = data.city ==  inputCity
+    }
+
+    if (inputCity.length > 0 && found === false ) { 
+      found = data.city ==  inputCity
+  }
+       return found ; 
+      } ) 
    loadTable(filteredData);
 }
 

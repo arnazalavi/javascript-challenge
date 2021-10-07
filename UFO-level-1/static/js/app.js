@@ -20,12 +20,19 @@ function runEnter() {
     var inputElement = d3.select('#datetime')
    var inputValue = inputElement.property("value");
 
-   var cityElement = d3.select('#city')
-   var inputCity = cityElement.property("value");
+   //var cityElement = d3.select('#city')
+  // var inputCity = cityElement.property("value");
  
    console.log(inputValue);
-   var filteredData = tableData.filter(data => data.datetime == inputValue || data.city == inputCity) ;  
-
+   var filteredData = tableData
+   if (inputValue.length >0 ) {
+      filteredData = tableData.filter(data => data.datetime == inputValue ) ;  
+   // if inputValue == ''
+   // or lenght is 0
+   // then load the whole table
+   // filteredData = tableData
+  
+   }
    loadTable(filteredData);
 }
 
