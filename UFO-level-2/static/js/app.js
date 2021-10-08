@@ -46,17 +46,24 @@ function runEnter() {
        found = data.datetime ==  inputValue || inputValue.length === 0
        
 
-      if (inputCity.length > 0 && found === false ) { 
+      if (inputCity.length > 0 && found === true ) { 
         found = data.city ==  inputCity
     }
 
-    if (inputCity.length > 0 && found === false ) { 
-      found = data.city ==  inputCity
+    if (inputState.length > 0 && found === true) { 
+      found = data.state ==  inputState
+   }
+   if (inputCountry.length > 0 && found === true ) { 
+    found = data.country ==  inputCountry
+  }
+
+  if (inputShape.length > 0 && found === true ) { 
+  found = data.shape ==  inputShape
   }
        return found ; 
       } ) 
    loadTable(filteredData);
-}
+  }
 
 function loadTable(table){
     tbody.html("")
